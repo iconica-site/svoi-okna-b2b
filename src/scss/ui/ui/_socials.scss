@@ -1,0 +1,60 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: var(--socials-gap, 10px);
+
+  // .socials--narrow-gap
+  &--narrow-gap {
+    --socials-gap: 5px;
+  }
+
+  // .socials__item
+  &__item {
+    flex: 0 0 auto;
+    font-size: 0;
+  }
+
+  // .socials__link
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    block-size: 40px;
+    aspect-ratio: 1 / 1;
+    color: var(--socials-link-color, #{variables.$color-374152});
+    background-color: var(--socials-link-background-color, #{variables.$color-f3f7fb});
+    border-radius: 5px;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-hover;
+      background-color: variables.$color-f3f7fb;
+    }
+
+    // .socials__link--green
+    &--green {
+      --socials-link-color: #{variables.$color-0ec144};
+      --socials-link-background-color: #{variables.$color-f1faf1};
+    }
+
+    // .socials__link--cyan
+    &--cyan {
+      --socials-link-color: #{variables.$color-249fe1};
+      --socials-link-background-color: #{variables.$color-ebf6fe};
+    }
+
+    // .socials__link--blue
+    &--blue {
+      --socials-link-color: #{variables.$color-2a3ad9};
+      --socials-link-background-color: #{variables.$color-e8ecff};
+    }
+  }
+}

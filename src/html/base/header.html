@@ -1,27 +1,76 @@
 <header class="header" id="header" data-header="header" data-burger="wrapper">
-  <div class="header__wrapper" data-header="wrapper" data-fixed>
-    <div class="header__container container">
-      <div class="header__inner">
-        <div class="header-logo">
-          <a class="header-logo__image ibg" href="#">
-            <!-- <img src="@img" alt="Лого"> -->
-          </a>
-        </div>
-        <button class="burger-button" data-burger="button">
-          <span class="burger-button__line burger-button__line--top"></span>
-          <span class="burger-button__line burger-button__line--center"></span>
-          <span class="burger-button__line burger-button__line--bottom"></span>
-        </button>
-        <div class="header-nav" data-burger="menu">
-          <nav class="header-nav__inner" aria-label="Главная навигация">
-            <ul class="header-nav__list">
-              <li class="header-nav__item">
-                <a class="header-nav__link" href="#">link</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+  <div class="header__wrapper container" data-header="wrapper">
+    <div class="header__inner">
+      <div class="header__reward responsive-media">
+        <img src="@img/icons/header/1.png" alt="Лучшее предприятие отрасли 2024" loading="lazy">
       </div>
+      <div class="header-logo">
+        <a class="header-logo__inner" href="/" aria-current="page" aria-label="Главная">
+          <span class="header-logo__image responsive-media">
+            <img src="@img/logo.png" alt="" loading="lazy">
+          </span>
+          <span class="header-logo__text">
+            <span class="header-logo__label">СВОИ ОКНА</span>
+            <span class="header-logo__industry">Производственная&nbsp;компания<br>только&nbsp;для&nbsp;дилеров&nbsp;и&nbsp;строителей</span>
+          </span>
+        </a>
+      </div>
+      <!-- <button class="burger-button" data-burger="button">
+        <span class="burger-button__line burger-button__line--top"></span>
+        <span class="burger-button__line burger-button__line--center"></span>
+        <span class="burger-button__line burger-button__line--bottom"></span>
+      </button> -->
+      <div class="header-nav" data-burger="menu">
+        <nav class="header-nav__inner" aria-label="Главная навигация">
+          <ul class="header-nav__list">
+            <li class="header-nav__item">
+              <a class="header-nav__link header-link" href="#">
+                <span class="header-link__icon" aria-hidden="true">
+                  <svg width="16" height="16">
+                    <use xlink:href="#icon-catalog"></use>
+                  </svg>
+                </span>
+                <span class="header-link__text">Каталог</span>
+              </a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link header-link" href="#">Производство</a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link header-link" href="#">Партнеры</a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link header-link" href="#">Дилерам и строителям</a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link header-link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <ul class="socials socials--narrow-gap">
+        <li class="socials__item">
+          <a class="socials__link socials__link--green" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="20" height="20" aria-hidden="true">
+              <use xlink:href="#icon-whatsapp"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a class="socials__link socials__link--cyan" href="#" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg width="20" height="17" aria-hidden="true">
+              <use xlink:href="#icon-telegram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a class="socials__link socials__link--blue" href="mailto:#" aria-label="Email">
+            <svg width="20" height="16" aria-hidden="true">
+              <use xlink:href="#icon-mail"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </header>

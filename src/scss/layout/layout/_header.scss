@@ -1,0 +1,152 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.header {
+  block-size: variables.$header-height;
+
+  // .header__wrapper
+  &__wrapper {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline: 0;
+    z-index: 100;
+    inline-size: 100%;
+    background-color: variables.$color-white;
+  }
+
+  // .header__inner
+  &__inner {
+    display: grid;
+    grid-template-columns: 51px 1fr repeat(2, auto);
+    align-items: center;
+    gap: 5px;
+    min-block-size: 68px;
+    padding-block: 5px;
+  }
+
+  // .header__reward
+  &__reward {
+    inline-size: 51px;
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  // .header-logo__inner
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-hover;
+    }
+  }
+
+  // .header-logo__image
+  &__image {
+    flex: 0 0 auto;
+    inline-size: 62px;
+    aspect-ratio: 62 / 52;
+    font-size: 0;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  // .header-logo__text
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    letter-spacing: -0.01em;
+  }
+
+  // .header-logo__label
+  &__label {
+    font-family: variables.$font-inter;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  // .header-logo__industry
+  &__industry {
+    font-weight: 500;
+    font-size: 11px;
+    opacity: 0.7;
+  }
+}
+
+.header-nav {
+  // .header-nav__inner
+  &__inner {
+  }
+
+  // .header-nav__list
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  // .header-nav__item
+  &__item {
+  }
+
+  // .header-nav__link
+  &__link {
+  }
+}
+
+.header-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-block-size: 40px;
+  padding-block: 5px;
+  padding-inline: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: variables.$color-374152;
+  background-color: variables.$color-f3f7fb;
+  border-radius: 5px;
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: color;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    color: variables.$color-hover;
+  }
+
+  // .header-link__icon
+  &__icon {
+    flex: 0 0 auto;
+    font-size: 0;
+    color: variables.$color-3d62eb;
+  }
+
+  // .header-link__text
+  &__text {
+  }
+}
