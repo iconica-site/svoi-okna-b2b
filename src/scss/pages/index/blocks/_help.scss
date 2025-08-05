@@ -24,6 +24,10 @@
   &__content {
     max-inline-size: 610px;
     margin-inline-start: auto;
+
+    > *:last-child {
+      margin-block-end: 0;
+    }
   }
 
   // .help__icon
