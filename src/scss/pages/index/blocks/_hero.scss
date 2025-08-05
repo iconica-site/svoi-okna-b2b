@@ -152,6 +152,10 @@
       color: variables.$color-white;
       background-color: variables.$color-hover;
     }
+
+    svg {
+      transform: translateX(3px);
+    }
   }
 
   // .hero-video__badge

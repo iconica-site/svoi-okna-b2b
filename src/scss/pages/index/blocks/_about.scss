@@ -70,6 +70,10 @@
       color: variables.$color-white;
       background-color: variables.$color-f81255;
     }
+
+    svg {
+      transform: translateX(3px);
+    }
   }
 }
 
