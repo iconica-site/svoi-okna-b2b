@@ -1,0 +1,74 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.button {
+  --button-height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: var(--button-gap, 32px);
+  min-block-size: var(--button-height);
+  padding-block: 5px;
+  padding-inline: 5px 15px;
+  font-weight: 500;
+  font-size: 14px;
+  text-wrap: balance;
+  color: var(--button-color, variables.$color-white);
+  background-color: var(--button-background-color, variables.$color-hover);
+  border-radius: 30px;
+
+  &:not(:has(&__icon)) {
+    justify-content: center;
+    padding-inline-start: 15px;
+    text-align: center;
+  }
+
+  // .button--white
+  &--white {
+    --button-color: #{variables.$color-hover};
+    --button-color-hover: #{variables.$color-white};
+    --button-background-color: #{variables.$color-white};
+    --button-background-color-hover: #{variables.$color-hover};
+    --button-icon-color: #{variables.$color-white};
+    --button-icon-color-hover: #{variables.$color-hover};
+    --button-icon-background-color: #{variables.$color-hover};
+    --button-icon-background-color-hover: #{variables.$color-white};
+  }
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: color, background-color;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    --button-color: var(--button-color-hover, #{variables.$color-hover});
+    --button-background-color: var(--button-background-color-hover, #{variables.$color-white});
+    --button-icon-color: var(--button-icon-color-hover, #{variables.$color-white});
+    --button-icon-background-color: var(--button-icon-background-color-hover, #{variables.$color-hover});
+  }
+
+  // .button__icon
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    inline-size: calc(var(--button-height) - 10px);
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+    color: var(--button-icon-color, variables.$color-hover);
+    background-color: var(--button-icon-background-color, variables.$color-white);
+    border-radius: 50%;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color;
+      transition-duration: 0.3s;
+    }
+  }
+
+  // .button__text
+  &__text {
+  }
+}
