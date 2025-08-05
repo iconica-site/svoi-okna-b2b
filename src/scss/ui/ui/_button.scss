@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: start;
   gap: var(--button-gap, 32px);
+  max-inline-size: var(--button-width);
   min-block-size: var(--button-height);
   padding-block: 5px;
   padding-inline: 5px 15px;
