@@ -1,0 +1,94 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.types {
+  padding-block: 50px;
+  background-color: variables.$color-section-background;
+
+  // .types__title
+  &__title {
+    margin-block-end: 30px;
+  }
+}
+
+.types-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+  column-gap: 11px;
+
+  // .types-list__item
+  &__item {
+  }
+}
+
+.type-card {
+  // .type-card__top
+  &__top {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: end;
+    aspect-ratio: 393 / 250;
+    margin-block-end: 3px;
+    padding: 20px;
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      font-size: 0;
+      background-image: linear-gradient(to bottom, rgba(variables.$color-black, 0), rgba(variables.$color-black, 0.5));
+      pointer-events: none;
+    }
+  }
+
+  // .type-card__title
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    color: variables.$color-white;
+  }
+
+  // .type-card__image
+  &__image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    font-size: 0;
+  }
+
+  // .type-card__button
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-block-size: 40px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: variables.$color-white;
+    background-color: variables.$color-hover;
+    border: 1px solid variables.$color-hover;
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-hover;
+      background-color: variables.$color-white;
+    }
+  }
+}
