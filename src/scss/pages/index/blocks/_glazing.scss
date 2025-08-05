@@ -1,0 +1,137 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.glazing {
+  display: grid;
+  grid-template-columns: calc(488 / 580 * 1fr) calc(672 / 580 * 1fr);
+  align-items: end;
+  gap: 40px;
+  padding-block: 50px 15px;
+
+  // .glazing__content
+  &__content {
+    padding-block-end: 1px;
+  }
+
+  // .glazing__title
+  &__title {
+    margin-block-end: 20px;
+  }
+
+  // .glazing__text
+  &__text {
+    font-family: variables.$font-inter;
+    max-inline-size: 480px;
+    margin-block-end: 30px;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: variables.$color-404040;
+  }
+
+  // .glazing__information
+  &__information {
+    margin-block-end: 30px;
+  }
+
+  // .glazing__row
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-inline-size: 549px;
+  }
+
+  // .glazing__button
+  &__button {
+    --button-height: 50px;
+    --button-gap: 30px;
+    --button-width: 276px;
+    --button-font-family: variables.$font-inter;
+    --button-letter-spacing: -0.01em;
+  }
+}
+
+.glazing-slider {
+  aspect-ratio: 488 / 466;
+  border-radius: 10px;
+
+  // .glazing-slider__wrapper
+  &__wrapper {
+  }
+
+  // .glazing-slider__slide
+  &__slide {
+    font-size: 0;
+    border-radius: 10px;
+  }
+
+  // .glazing-slider__arrows
+  &__arrows {
+    position: absolute;
+    inset-block-end: 13px;
+    inset-inline-start: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+}
+
+.glazing-information {
+  // .glazing-information__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: variables.$font-inter;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+
+    &:not(:last-child) {
+      margin-block-end: 18px;
+    }
+
+    &::before {
+      content: "";
+      flex: 0 0 auto;
+      inline-size: 6px;
+      aspect-ratio: 1 / 1;
+      font-size: 0;
+      background-color: variables.$color-f81255;
+      border-radius: 50%;
+    }
+  }
+}
+
+.glazing-present {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  min-block-size: 50px;
+  padding-inline: 22px;
+  font-family: variables.$font-inter;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: variables.$color-404040;
+  background-color: variables.$color-white;
+  border: 1px solid variables.$color-d8dffb;
+  border-radius: 30px;
+
+  // .glazing-present__image
+  &__image {
+    flex: 0 0 auto;
+    inline-size: 52px;
+    aspect-ratio: 52 / 50;
+    font-size: 0;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  // .glazing-present__text
+  &__text {
+  }
+}
