@@ -1,0 +1,105 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.about {
+  padding-block: 50px;
+  background-color: variables.$color-fafcfe;
+
+  // .about__title
+  &__title {
+    max-inline-size: 1100px;
+    margin-block-end: 30px;
+  }
+
+  // .about__inner
+  &__inner {
+    display: grid;
+    grid-template-columns: calc(530 / 585 * 1fr) calc(640 / 585 * 1fr);
+    align-items: start;
+    gap: 30px;
+  }
+
+  // .about__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  // .about__text
+  &__text {
+  }
+
+  // .about__button
+  &__button {
+    --button-height: 50px;
+    --button-gap: 30px;
+    --button-width: 294px;
+    --button-letter-spacing: -0.01em;
+  }
+}
+
+.about-video {
+  aspect-ratio: 530 / 375;
+  border-radius: 10px;
+
+  // .about-video__play
+  &__play {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inline-size: 60px;
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+    color: variables.$color-f81255;
+    background-color: variables.$color-white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-white;
+      background-color: variables.$color-f81255;
+    }
+  }
+}
+
+.about-information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-inline-size: 480px;
+  padding: 15px;
+  color: variables.$color-404040;
+  background-color: variables.$color-white;
+  border: 1px solid variables.$color-d8dffb;
+  border-radius: 10px;
+
+  // .about-information__icon
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    inline-size: 39px;
+    aspect-ratio: 1 / 1;
+    font-size: 0;
+    color: variables.$color-hover;
+    background-color: variables.$color-f3faff;
+    border-radius: 5px;
+  }
+
+  // .about-information__text
+  &__text {
+  }
+}
