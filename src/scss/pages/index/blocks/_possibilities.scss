@@ -1,0 +1,62 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.possibilities {
+  padding-block: 50px;
+  background-color: variables.$color-section-background;
+
+  // .possibilities__title
+  &__title {
+    margin-block-end: 30px;
+  }
+}
+
+.possibilities-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+
+  // .possibilities-list__item
+  &__item {
+  }
+}
+
+.possibility-card {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  color: variables.$color-404040;
+  background-color: variables.$color-white;
+  border-radius: 10px;
+  overflow: hidden;
+
+  // .possibility-card__image
+  &__image {
+    flex: 0 0 auto;
+    aspect-ratio: 293 / 241;
+    font-size: 0;
+  }
+
+  // .possibility-card__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    gap: 10px;
+    flex: 1 1 auto;
+    padding-block-end: 20px;
+    padding-inline: 20px 21px;
+  }
+
+  // .possibility-card__title
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  // .possibility-card__text
+  &__text {
+  }
+}
