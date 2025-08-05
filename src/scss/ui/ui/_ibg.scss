@@ -4,7 +4,8 @@
   display: block;
   overflow: hidden;
 
-  > :where(iframe, img, picture > img, svg, video) {
+  > :where(iframe, img, svg, video),
+  > :where(picture) > :where(img) {
     position: absolute;
     inset: 0;
     z-index: -2;
