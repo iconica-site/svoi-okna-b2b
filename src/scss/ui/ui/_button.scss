@@ -15,9 +15,11 @@
   padding-inline: 5px 15px;
   font-weight: 500;
   font-size: 14px;
+  letter-spacing: var(--button-letter-spacing);
   text-wrap: balance;
   color: var(--button-color, variables.$color-white);
   background-color: var(--button-background-color, variables.$color-hover);
+  border: var(--button-border-width) solid var(--button-border-color, variables.$color-aabdf7);
   border-radius: 30px;
 
   &:not(:has(&__icon)) {
@@ -32,6 +34,8 @@
     --button-color-hover: #{variables.$color-white};
     --button-background-color: #{variables.$color-white};
     --button-background-color-hover: #{variables.$color-hover};
+    --button-border-width: 1px;
+    --button-border-color-hover: #{variables.$color-hover};
     --button-icon-color: #{variables.$color-white};
     --button-icon-color-hover: #{variables.$color-hover};
     --button-icon-background-color: #{variables.$color-hover};
@@ -39,13 +43,14 @@
   }
 
   @include mixins.prefers-reduced-motion {
-    transition-property: color, background-color;
+    transition-property: color, background-color, border-color;
     transition-duration: 0.3s;
   }
 
   @include mixins.hover {
     --button-color: var(--button-color-hover, #{variables.$color-hover});
     --button-background-color: var(--button-background-color-hover, #{variables.$color-white});
+    --button-border-color: var(--button-border-color-hover, #{variables.$color-white});
     --button-icon-color: var(--button-icon-color-hover, #{variables.$color-white});
     --button-icon-background-color: var(--button-icon-background-color-hover, #{variables.$color-hover});
   }
