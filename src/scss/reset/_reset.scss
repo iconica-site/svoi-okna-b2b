@@ -140,10 +140,6 @@
   }
 }
 
-:where(:focus) {
-  outline: unset;
-}
-
 ::backdrop {
   position: absolute;
   z-index: -1;
