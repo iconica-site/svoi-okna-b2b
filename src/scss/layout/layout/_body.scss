@@ -4,12 +4,13 @@
 
 body {
   font-family: variables.$font-inter-tight;
-  // font-size: ;
-  // line-height: ;
   color: variables.$color-4b5563;
-  // background-color: ;
 
   .scroll-lock & {
     overflow: hidden;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
   }
 }
