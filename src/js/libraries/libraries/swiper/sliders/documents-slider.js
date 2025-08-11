@@ -19,8 +19,30 @@ documentsSections.forEach(documentSection => {
       nextEl: nextArrow,
       prevEl: prevArrow,
     },
-    slidesPerView: 5,
-    spaceBetween: 8.07,
+    breakpoints: {
+      "480.1": {
+        slidesPerView: 2,
+        spaceBetween: 8,
+      },
+      "768.1": {
+        slidesPerView: 3,
+        spaceBetween: 8,
+      },
+      "1024.1": {
+        slidesPerView: 4,
+        spaceBetween: 8,
+      },
+      "1200.1": {
+        slidesPerView: 5,
+        spaceBetween: 8,
+      },
+      "1440.1": {
+        slidesPerView: 5,
+        spaceBetween: 8.07,
+      },
+    },
+    slidesPerView: 1,
+    spaceBetween: 8,
     rewind: true,
   });
 });

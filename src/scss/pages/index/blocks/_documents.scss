@@ -3,7 +3,11 @@
 @use "../../../variables/variables";
 
 .documents {
-  padding-block: 25px;
+  padding-block: 10px 25px;
+
+  @media (min-width: #{480 + 0.1px}) {
+    padding-block-start: 25px;
+  }
 
   // .documents__inner
   &__inner {
@@ -15,7 +19,7 @@
   &__arrows {
     position: absolute;
     inset-block-start: 50%;
-    inset-inline: -20px;
+    inset-inline: 0;
     z-index: 2;
     transform: translateY(-50%);
     pointer-events: none;
@@ -23,7 +27,21 @@
 }
 
 .documents-slider {
+  inline-size: calc(100% - 40px);
+  margin-inline: auto;
   border-radius: 8px;
+
+  @media (min-width: #{480 + 0.1px}) {
+    inline-size: calc(100% - 26px);
+  }
+
+  @media (min-width: #{768 + 0.1px}) {
+    inline-size: calc(100% - 20px);
+  }
+
+  @media (min-width: #{1440 + 0.1px}) {
+    inline-size: calc(100% - 36px);
+  }
 
   // .documents-slider__wrapper
   &__wrapper {
