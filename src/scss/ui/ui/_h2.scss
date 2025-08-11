@@ -4,13 +4,30 @@
 
 .h2 {
   font-weight: 800;
-  font-size: 45px;
+  font-size: 28px;
   line-height: 1.2;
+  text-wrap: balance;
   color: var(--h2-color, #{variables.$color-404040});
 
   // .h2--white
   &--white {
     --h2-color: #{variables.$color-white};
+  }
+
+  @media (min-width: #{480 + 0.1px}) {
+    font-size: 30px;
+  }
+
+  @media (min-width: #{1024 + 0.1px}) {
+    font-size: 35px;
+  }
+
+  @media (min-width: #{1200 + 0.1px}) {
+    font-size: 40px;
+  }
+
+  @media (min-width: #{1440 + 0.1px}) {
+    font-size: 45px;
   }
 
   // .h2__mark
