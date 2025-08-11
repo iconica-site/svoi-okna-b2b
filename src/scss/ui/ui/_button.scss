@@ -3,12 +3,12 @@
 @use "../../variables/variables";
 
 .button {
-  --button-height: 55px;
+  --button-height: 60px;
 
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: var(--button-gap, 32px);
+  gap: var(--button-gap, 45px);
   inline-size: 100%;
   max-inline-size: var(--button-width);
   min-block-size: var(--button-height);
@@ -18,6 +18,7 @@
   font-weight: 500;
   font-size: 14px;
   letter-spacing: var(--button-letter-spacing);
+  text-align: start;
   text-wrap: balance;
   color: var(--button-color, variables.$color-white);
   background-color: var(--button-background-color, variables.$color-hover);
@@ -57,6 +58,16 @@
     --button-icon-background-color: var(--button-icon-background-color-hover, #{variables.$color-hover});
   }
 
+  @media (min-width: #{1024 + 0.1px}) {
+    --button-gap: 32px;
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center;
+    padding-inline-start: 15px;
+    text-align: center;
+  }
+
   // .button__icon
   &__icon {
     display: flex;
@@ -73,6 +84,10 @@
     @include mixins.prefers-reduced-motion {
       transition-property: color, background-color;
       transition-duration: 0.3s;
+    }
+
+    @media (max-width: 480px) {
+      display: none;
     }
   }
 

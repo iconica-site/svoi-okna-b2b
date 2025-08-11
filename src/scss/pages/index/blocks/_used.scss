@@ -3,15 +3,35 @@
 @use "../../../variables/variables";
 
 .used {
-  display: grid;
-  gap: 30px;
-  padding-block: 50px 25px;
+  padding-block: 50px 10px;
+
+  @media (min-width: #{480 + 0.1px}) {
+    padding-block-end: 25px;
+  }
+
+  // .used__title
+  &__title {
+    max-inline-size: 685px;
+    margin-block-end: 30px;
+  }
+
+  // .used__systems
+  &__systems {
+    margin-block-start: 30px;
+  }
 }
 
 .used-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 30px;
+
+  @media (min-width: #{480 + 0.1px}) {
+    gap: 10px;
+  }
+
+  @media (min-width: #{1024 + 0.1px}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   // .used-list__item
   &__item {
@@ -20,18 +40,42 @@
 
 .used-card {
   display: grid;
-  grid-template-columns: calc(169 / 279.5 * 1fr) calc(390 / 279.5 * 1fr);
   align-items: center;
-  gap: 26px;
-  padding: 5px;
+  gap: 15px;
+  block-size: 100%;
+  padding: 10px;
   background-color: variables.$color-section-background;
+  border: 1px solid rgba($color: variables.$color-aabdf7, $alpha: 0);
   border-radius: 10px;
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: border-color;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    border-color: variables.$color-aabdf7;
+  }
+
+  @media (min-width: #{480 + 0.1px}) {
+    grid-template-columns: 169px 1fr;
+    padding: 5px;
+  }
+
+  @media (min-width: #{1200 + 0.1px}) {
+    gap: 26px;
+  }
 
   // .used-card__image
   &__image {
-    aspect-ratio: 169 / 219;
+    block-size: 219px;
     font-size: 0;
+    background-color: variables.$color-white;
     border-radius: 5px;
+
+    img {
+      object-fit: contain;
+    }
   }
 
   // .used-card__content
@@ -43,10 +87,16 @@
 
   // .used-card__title
   &__title {
-    margin-block-end: 20px;
+    font-family: variables.$font-inter;
+    margin-block-end: 10px;
     font-weight: 700;
     font-size: 20px;
+    letter-spacing: -0.01em;
     color: variables.$color-2e2e2e;
+
+    @media (min-width: #{480 + 0.1px}) {
+      margin-block-end: 20px;
+    }
 
     a {
       @include mixins.prefers-reduced-motion {
@@ -62,33 +112,51 @@
 
   // .used-card__characteristics
   &__characteristics {
-    margin-block-end: 26px;
+    margin-block-end: 20px;
+
+    @media (min-width: #{480 + 0.1px}) {
+      margin-block-end: 26px;
+    }
   }
 
   // .used-card__button
   &__button {
-    --button-height: 40px;
+    --button-height: 45px;
     --button-gap: 22px;
     --button-width: 155px;
     --button-font-family: #{variables.$font-inter};
     --button-letter-spacing: -0.01em;
     --button-color: #{variables.$color-2e2e2e};
     --button-border-color: rgba(61, 98, 235, 0.2);
+
+    @media (min-width: #{480 + 0.1px}) {
+      --button-height: 40px;
+    }
   }
 }
 
 .used-characteristics {
   display: grid;
-  grid-template-columns: repeat(2, auto);
   row-gap: 10px;
-  column-gap: 30px;
+  column-gap: 15px;
   inline-size: fit-content;
+  font-size: 16px;
+
+  @media (min-width: #{1200 + 0.1px}) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media (min-width: #{1440 + 0.1px}) {
+    column-gap: 30px;
+  }
 
   // .used-characteristics__item
   &__item {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: span 2;
+    @media (min-width: #{1200 + 0.1px}) {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: span 2;
+    }
   }
 
   // .used-characteristics__label
@@ -103,14 +171,26 @@
 
 .used-systems {
   display: grid;
-  grid-template-columns: calc(550 / 580 * 1fr) calc(610 / 580 * 1fr);
   align-items: center;
-  gap: 40px;
+  row-gap: 20px;
+  column-gap: 61px;
+
+  @media (min-width: #{1200 + 0.1px}) {
+    grid-template-columns: 1fr 610px;
+  }
+
+  @media (min-width: #{1440 + 0.1px}) {
+    column-gap: 40px;
+  }
 
   // .used-systems__text
   &__text {
-    font-size: 20px;
+    font-size: 16px;
     color: variables.$color-404040;
+
+    @media (min-width: #{480 + 0.1px}) {
+      font-size: 20px;
+    }
 
     b {
       font-weight: 700;
@@ -120,14 +200,32 @@
   // .used-systems__icons
   &__icons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    row-gap: 10px;
+    column-gap: 3px;
+    max-inline-size: 610px;
+
+    @media (min-width: #{480 + 0.1px}) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      column-gap: 5px;
+    }
   }
 
   // .used-systems__icon
   &__icon {
-    aspect-ratio: 200 / 100;
+    aspect-ratio: 330 / 72.13;
     font-size: 0;
+
+    @media (min-width: #{480 + 0.1px}) {
+      aspect-ratio: 200 / 100;
+    }
+
+    @media (max-width: 480px) {
+      border: 1px solid variables.$color-d8dffb;
+      border-radius: 10px;
+    }
 
     img {
       object-fit: contain;
