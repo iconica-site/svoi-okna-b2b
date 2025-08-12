@@ -3,19 +3,56 @@
 @use "../../../variables/variables";
 
 .signup {
-  padding-block: 15px 40px;
+  padding-block: 15px 46px;
+
+  @media (min-width: #{480 + 0.1px}) {
+    padding-block-end: 42px;
+  }
+
+  @media (min-width: #{768 + 0.1px}) {
+    padding-block-end: 50px;
+  }
+
+  @media (min-width: #{1440 + 0.1px}) {
+    padding-block-end: 40px;
+  }
 
   // .signup__inner
   &__inner {
-    padding-block: 40px 34px;
-    padding-inline: 40px;
-    border-radius: 10px;
+    padding: 25px;
     color: variables.$color-white;
     background-color: variables.$color-hover;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 895 707'%3E%3Cpath fill='%23fff' fill-opacity='.03' d='M542.37 8.41a2 2 0 0 1 2.83 0l348.23 348.23a2 2 0 0 1 0 2.83l-346.7 346.7a2 2 0 0 1-2.83 0L195.67 357.94a2 2 0 0 1 0-2.83l346.7-346.7ZM347.29.6a2 2 0 0 1 2.82 0l60.6 60.59a2 2 0 0 1 0 2.82L127.41 347.3a2 2 0 0 0 0 2.82l284.81 284.81a2 2 0 0 1 0 2.83l-60.59 60.6a2 2 0 0 1-2.82 0L.59 350.1a2 2 0 0 1 0-2.82L347.29.59Zm106.6 487.86 89.13 89.13 222.36-222.36-89.13-89.13-222.37 222.36Zm-131.77-129.2 81.74 81.74 80.64-80.63-81.75-81.75-80.63 80.63Zm125.61-131.88 81.75 81.74 95.94-95.95-81.74-81.74-95.95 95.95Z'/%3E%3C/svg%3E");
-    background-position: top -81px right -43.14px;
-    background-repeat: no-repeat;
-    background-size: 661.14px 522.57px;
+    border-radius: 20px;
+
+    @media (min-width: #{480 + 0.1px}) {
+      padding: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 895 707'%3E%3Cpath fill='%23fff' fill-opacity='.03' d='M542.37 8.41a2 2 0 0 1 2.83 0l348.23 348.23a2 2 0 0 1 0 2.83l-346.7 346.7a2 2 0 0 1-2.83 0L195.67 357.94a2 2 0 0 1 0-2.83l346.7-346.7ZM347.29.6a2 2 0 0 1 2.82 0l60.6 60.59a2 2 0 0 1 0 2.82L127.41 347.3a2 2 0 0 0 0 2.82l284.81 284.81a2 2 0 0 1 0 2.83l-60.59 60.6a2 2 0 0 1-2.82 0L.59 350.1a2 2 0 0 1 0-2.82L347.29.59Zm106.6 487.86 89.13 89.13 222.36-222.36-89.13-89.13-222.37 222.36Zm-131.77-129.2 81.74 81.74 80.64-80.63-81.75-81.75-80.63 80.63Zm125.61-131.88 81.75 81.74 95.94-95.95-81.74-81.74-95.95 95.95Z'/%3E%3C/svg%3E");
+      background-position: top -224px right -220.71px;
+      background-repeat: no-repeat;
+      background-size: 543.71px 422.69px;
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      background-position: top -101px right -122.71px;
+    }
+
+    @media (min-width: #{1024 + 0.1px}) {
+      padding: 40px;
+      background-position: top -103px right -221.14px;
+      background-size: 661.14px 522.57px;
+    }
+
+    @media (min-width: #{1200 + 0.1px}) {
+      background-position: top -103px right -165.14px;
+      background-size: 661.14px 522.57px;
+    }
+
+    @media (min-width: #{1440 + 0.1px}) {
+      padding-block-end: 34px;
+      border-radius: 10px;
+      background-position: top -81px right -43.14px;
+      background-size: 661.14px 522.57px;
+    }
   }
 
   // .signup__title
@@ -26,10 +63,23 @@
   // .signup__text
   &__text {
     max-inline-size: 725px;
-    margin-block-end: 30px;
+    margin-block-end: 20px;
     font-family: variables.$font-inter;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: -0.01em;
+
+    @media (min-width: #{480 + 0.1px}) {
+      margin-block-end: 10px;
+      font-size: 18px;
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-end: 30px;
+    }
+
+    @media (min-width: #{1200 + 0.1px}) {
+      font-size: 20px;
+    }
   }
 }
 
@@ -37,21 +87,31 @@
   // .signup-form__row
   &__row {
     display: flex;
-    align-items: center;
     gap: 10px;
+
+    @media (min-width: #{768 + 0.1px}) {
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   // .signup-form__inputs
   &__inputs {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 5px;
     flex: 1 1 auto;
+
+    @media (min-width: #{768 + 0.1px}) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
-  // .signup-form__name
-  &__name {
+  // .signup-form__input
+  &__input {
     block-size: 50px;
     padding-inline: 20px;
     font-family: variables.$font-inter;
@@ -59,7 +119,7 @@
     font-size: 14px;
     letter-spacing: -0.01em;
     background-color: variables.$color-5c7cee;
-    border-radius: 5px;
+    border-radius: 10px;
 
     &:focus {
       outline: unset;
@@ -68,29 +128,18 @@
     &::placeholder {
       color: variables.$color-dedede;
     }
-  }
 
-  // .signup-form__tel
-  &__tel {
-    block-size: 50px;
-    padding-inline: 48px 20px;
-    font-family: variables.$font-inter;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.01em;
-    background-color: variables.$color-5c7cee;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 19 18'%3E%3Cpath fill='%23CE2028' d='M18.5 13.5a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2v-2h18v2Z'/%3E%3Cpath fill='%2322408C' d='M.5 6.5h18v5H.5v-5Z'/%3E%3Cpath fill='%23EEE' d='M16.5 2.5h-14a2 2 0 0 0-2 2v2h18v-2a2 2 0 0 0-2-2Z'/%3E%3C/svg%3E");
-    background-position: left 20px center;
-    background-repeat: no-repeat;
-    background-size: 18px 18px;
-    border-radius: 5px;
-
-    &:focus {
-      outline: unset;
+    // .signup-form__input--name
+    &--name {
     }
 
-    &::placeholder {
-      color: variables.$color-dedede;
+    // .signup-form__input--tel
+    &--tel {
+      padding-inline-start: 48px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 19 18'%3E%3Cpath fill='%23CE2028' d='M18.5 13.5a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2v-2h18v2Z'/%3E%3Cpath fill='%2322408C' d='M.5 6.5h18v5H.5v-5Z'/%3E%3Cpath fill='%23EEE' d='M16.5 2.5h-14a2 2 0 0 0-2 2v2h18v-2a2 2 0 0 0-2-2Z'/%3E%3C/svg%3E");
+      background-position: left 20px center;
+      background-repeat: no-repeat;
+      background-size: 18px 18px;
     }
   }
 
@@ -100,7 +149,6 @@
     justify-content: center;
     align-items: center;
     inline-size: 100%;
-    max-inline-size: 326px;
     min-block-size: 50px;
     padding-block: 5px;
     padding-inline: 30px;
@@ -111,7 +159,7 @@
     color: variables.$color-404040;
     text-align: center;
     background-color: variables.$color-white;
-    border-radius: 5px;
+    border-radius: 10px;
 
     @include mixins.prefers-reduced-motion {
       transition-property: color;
@@ -121,15 +169,32 @@
     @include mixins.hover {
       color: variables.$color-hover;
     }
+
+    @media (min-width: #{768 + 0.1px}) {
+      max-inline-size: 226px;
+    }
+
+    @media (min-width: #{1024 + 0.1px}) {
+      max-inline-size: 326px;
+    }
   }
 
   // .signup-form__text
   &__text {
-    margin-block-start: 9px;
+    margin-block-start: 20px;
     font-family: variables.$font-inter;
+    font-weight: 500;
     font-size: 12px;
     letter-spacing: -0.01em;
     color: rgba($color: variables.$color-white, $alpha: 0.7);
+
+    @media (min-width: #{480 + 0.1px}) {
+      margin-block-start: 10px;
+    }
+
+    @media (min-width: #{768 + 0.1px}) {
+      margin-block-start: 9px;
+    }
 
     a {
       @include mixins.prefers-reduced-motion {
@@ -139,6 +204,12 @@
 
       @include mixins.hover {
         color: variables.$color-white;
+      }
+
+      @media (max-width: 480px) {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        text-underline-offset: 2px;
       }
     }
   }
