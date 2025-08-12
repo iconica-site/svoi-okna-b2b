@@ -14,8 +14,15 @@
 
 .possibilities-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+
+  @media (min-width: #{768 + 0.1px}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: #{1024 + 0.1px}) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   // .possibilities-list__item
   &__item {
@@ -23,19 +30,74 @@
 }
 
 .possibility-card {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
+  gap: 12px;
   block-size: 100%;
   color: variables.$color-404040;
   background-color: variables.$color-white;
   border-radius: 10px;
   overflow: hidden;
 
+  @media (min-width: #{1024 + 0.1px}) {
+    gap: 36px;
+  }
+
+  @media (min-width: #{1200 + 0.1px}) {
+    gap: 22px;
+  }
+
+  @media (min-width: #{1440 + 0.1px}) {
+    gap: 0;
+  }
+
+  @media (max-width: 768px) {
+    @media (min-width: #{355 + 0.1px}) {
+      padding-inline-end: 128px;
+
+      &:has(.possibility-card__image--small) {
+        padding-inline-end: 100px;
+      }
+    }
+  }
+
   // .possibility-card__image
   &__image {
     flex: 0 0 auto;
-    aspect-ratio: 293 / 241;
+    aspect-ratio: 1 / 1;
+    margin-inline-start: auto;
     font-size: 0;
+
+    @media (min-width: #{768 + 0.1px}) {
+      inline-size: 220px;
+    }
+
+    @media (max-width: 768px) {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-end: 0;
+      z-index: -1;
+      block-size: 100%;
+      max-block-size: 128px;
+    }
+
+    // .possibility-card__image--small
+    &--small {
+      @media (max-width: 768px) {
+        block-size: calc(100% - 6px);
+        max-block-size: 100px;
+      }
+    }
+
+    @media (max-width: 355px) {
+      display: none;
+    }
+
+    img {
+      object-fit: contain;
+    }
   }
 
   // .possibility-card__content
@@ -46,14 +108,25 @@
     justify-content: end;
     gap: 10px;
     flex: 1 1 auto;
-    padding-block-end: 20px;
-    padding-inline: 20px 21px;
+    padding: 20px;
+
+    @media (min-width: #{768 + 0.1px}) {
+      padding-block-start: 0;
+    }
+
+    @media (min-width: #{1440 + 0.1px}) {
+      padding-inline-end: 28px;
+    }
   }
 
   // .possibility-card__title
   &__title {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
+
+    @media (min-width: #{1200 + 0.1px}) {
+      font-size: 20px;
+    }
   }
 
   // .possibility-card__text
