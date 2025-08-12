@@ -150,7 +150,9 @@ class Spoilers {
 
   #init() {
     if (this.#breakpoint) {
-      this.#matchMedia.matches ? this.#activate() : this.#disableButtons();
+      if (this.#matchMedia.matches) {
+        this.#activate();
+      }
 
       this.#matchMedia.addEventListener("change", event => {
         event.matches ? this.#activate() : this.#inactivate();
@@ -198,7 +200,6 @@ class Spoilers {
     this.#spoilersArray.forEach(spoiler => {
       const { $button, $region } = spoiler;
 
-      this.#disableButtons($button);
       $button.removeAttribute("aria-controls");
       $button.removeAttribute("aria-expanded");
       $region.hidden = false;
@@ -210,17 +211,6 @@ class Spoilers {
         $region.removeAttribute("aria-labeledby");
       }
     });
-  }
-
-  /** @param {HTMLButtonElement} $button */
-  #disableButtons($button) {
-    if ($button) {
-      $button.disabled = true;
-    } else {
-      this.#spoilersArray.forEach(spoiler => {
-        spoiler.$button.disabled = true;
-      });
-    }
   }
 
   /** @param {HTMLButtonElement} $button */
