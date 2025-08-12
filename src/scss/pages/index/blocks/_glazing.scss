@@ -4,29 +4,68 @@
 
 .glazing {
   display: grid;
-  grid-template-columns: calc(488 / 580 * 1fr) calc(672 / 580 * 1fr);
   align-items: end;
-  gap: 40px;
+  gap: 30px;
   padding-block: 50px 15px;
+
+  @media (min-width: #{480 + 0.1px}) {
+    gap: 40px;
+  }
+
+  @media (min-width: #{1024 + 0.1px}) {
+    grid-template-columns: 430px 1fr;
+  }
+
+  @media (min-width: #{1200 + 0.1px}) {
+    gap: 30px;
+  }
+
+  @media (min-width: #{1440 + 0.1px}) {
+    grid-template-columns: 488px 1fr;
+    gap: 40px;
+  }
 
   // .glazing__content
   &__content {
-    padding-block-end: 1px;
+    > *:last-child {
+      margin-block-end: 0;
+    }
   }
 
   // .glazing__title
   &__title {
-    margin-block-end: 20px;
+    margin-block-end: 10px;
+    text-wrap: unset;
+
+    @media (min-width: #{480 + 0.1px}) {
+      margin-block-end: 20px;
+    }
   }
 
   // .glazing__text
   &__text {
     font-family: variables.$font-inter;
-    max-inline-size: 480px;
-    margin-block-end: 30px;
-    font-size: 20px;
+    margin-block-end: 20px;
+    font-size: 16px;
     letter-spacing: -0.01em;
     color: variables.$color-404040;
+
+    @media (min-width: #{480 + 0.1px}) {
+      margin-block-end: 30px;
+      font-size: 18px;
+    }
+
+    @media (min-width: #{1024 + 0.1px}) {
+      max-inline-size: 480px;
+    }
+
+    @media (min-width: #{1200 + 0.1px}) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-weight: 600;
+    }
   }
 
   // .glazing__information
@@ -39,21 +78,30 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    max-inline-size: 549px;
+    max-inline-size: 594px;
+
+    @media (max-width: 1200px) {
+      flex-wrap: wrap;
+    }
   }
 
   // .glazing__button
   &__button {
-    --button-height: 50px;
     --button-gap: 30px;
-    --button-width: 276px;
     --button-font-family: variables.$font-inter;
     --button-letter-spacing: -0.01em;
+
+    @media (min-width: #{480 + 0.1px}) {
+      --button-width: 276px;
+    }
+
+    @media (min-width: #{1024 + 0.1px}) {
+      --button-width: 281px;
+    }
   }
 }
 
 .glazing-slider {
-  aspect-ratio: 488 / 466;
   border-radius: 10px;
 
   // .glazing-slider__wrapper
@@ -62,18 +110,40 @@
 
   // .glazing-slider__slide
   &__slide {
+    block-size: 400px;
     font-size: 0;
     border-radius: 10px;
+
+    @media (min-width: #{480 + 0.1px}) {
+      block-size: 466px;
+    }
   }
 
   // .glazing-slider__arrows
   &__arrows {
     position: absolute;
-    inset-block-end: 13px;
-    inset-inline-start: 50%;
     z-index: 2;
-    transform: translateX(-50%);
+    transform: translateY(-50%);
     pointer-events: none;
+
+    @media (min-width: #{480 + 0.1px}) {
+      inset-block-end: 11px;
+      inset-inline-start: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (min-width: #{1200 + 0.1px}) {
+      inset-block-end: 13px;
+    }
+
+    @media (min-width: #{1440 + 0.1px}) {
+      inset-block-end: 10px;
+    }
+
+    @media (max-width: 480px) {
+      inset-block-start: 50%;
+      inset-inline: 10px;
+    }
   }
 }
 
@@ -84,11 +154,15 @@
     align-items: center;
     gap: 10px;
     font-family: variables.$font-inter;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.01em;
 
     &:not(:last-child) {
       margin-block-end: 18px;
+    }
+
+    @media (min-width: #{480 + 0.1px}) {
+      font-weight: 700;
     }
 
     &::before {
@@ -105,25 +179,41 @@
 
 .glazing-present {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 13px;
-  min-block-size: 50px;
-  padding-inline: 22px;
+  gap: 22px;
+  inline-size: 100%;
+  min-block-size: 60px;
+  padding-inline: 25px;
   font-family: variables.$font-inter;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: -0.01em;
+  text-wrap: balance;
   color: variables.$color-404040;
   background-color: variables.$color-white;
   border: 1px solid variables.$color-d8dffb;
   border-radius: 30px;
 
+  @media (min-width: #{290 + 0.1px}) {
+    font-size: 14px;
+  }
+
+  @media (min-width: #{480 + 0.1px}) {
+    gap: 25px;
+    max-inline-size: 317px;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: #{768 + 0.1px}) {
+    gap: 6px;
+    max-inline-size: 303px;
+  }
+
   // .glazing-present__image
   &__image {
     flex: 0 0 auto;
-    inline-size: 52px;
-    aspect-ratio: 52 / 50;
+    inline-size: 62px;
+    aspect-ratio: 62 / 60;
     font-size: 0;
 
     img {
