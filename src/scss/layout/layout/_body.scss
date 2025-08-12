@@ -13,4 +13,23 @@ body {
   @media (max-width: 1200px) {
     font-size: 14px;
   }
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 125;
+    font-size: 0;
+    background-color: rgba($color: variables.$color-black, $alpha: 0.5);
+
+    html:not(.burger-active) & {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: background-color;
+      transition-duration: 0.3s;
+    }
+  }
 }
