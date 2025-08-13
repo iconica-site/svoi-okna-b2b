@@ -1,53 +1,77 @@
 <footer class="footer" aria-labelledby="title-footer">
   <h2 class="visually-hidden" id="title-footer">#</h2>
   <div class="footer-top container">
-    <div class="footer-logo">
-      <div class="footer-logo__inner">
-        <div class="footer-logo__image responsive-media">
-          <img src="@img/logo-2.png" alt="Логотип" loading="lazy">
-        </div>
-        <div class="footer-logo__text">
-          <div class="footer-logo__label">СВОИ ОКНА</div>
-          <div class="footer-logo__industry">Производство&nbsp;и&nbsp;продажа<br>пластиковых&nbsp;окон,&nbsp;алюминиевых<br>конструкций&nbsp;с&nbsp;доставкой&nbsp;по&nbsp;РФ</div>
-        </div>
+    <div class="footer-top__logo footer-logo">
+      <div class="footer-logo__image responsive-media">
+        <img src="@img/logo-2.png" alt="Логотип" loading="lazy">
+      </div>
+      <div class="footer-logo__text">
+        <div class="footer-logo__label">СВОИ ОКНА</div>
+        <div class="footer-logo__industry">Производство&nbsp;и&nbsp;продажа<br>пластиковых&nbsp;окон,&nbsp;алюминиевых<br>конструкций&nbsp;с&nbsp;доставкой&nbsp;по&nbsp;РФ</div>
       </div>
     </div>
     <div class="footer-top__inner">
-      <nav class="footer-nav" aria-label="Навигация">
-        <h3 class="footer-nav__title footer-label">Меню:</h3>
-        <ul class="footer-nav__list">
-          <li class="footer-nav__item">
-            <a class="footer-nav__link" href="#">Наши работы</a>
+      <nav class="footer-top__nav footer-nav" aria-label="Навигация">
+        <ul class="footer-nav__inner">
+          <li class="footer-nav__column">
+            <h3 class="footer-nav__title footer-label">Меню:</h3>
+            <ul class="footer-nav__list">
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Главная</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Производство</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Партнеры</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Дилерам и строителям</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Контакты</a>
+              </li>
+            </ul>
           </li>
-          <li class="footer-nav__item">
-            <a class="footer-nav__link" href="#">Отзывы</a>
-          </li>
-          <li class="footer-nav__item">
-            <a class="footer-nav__link" href="#">Производство</a>
-          </li>
-          <li class="footer-nav__item">
-            <a class="footer-nav__link" href="#">Партнеры</a>
-          </li>
-          <li class="footer-nav__item">
-            <a class="footer-nav__link" href="#">Контакты</a>
+          <li class="footer-nav__column">
+            <h3 class="footer-nav__title footer-label">Каталог:</h3>
+            <ul class="footer-nav__list">
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Пластиковые окна</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Алюминиевые окна</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Пластиковые двери</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Алюминиевые входные группы</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="#">Остекление балконов</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
-      <address class="footer-address">
+      <address class="footer-top__address footer-address">
         <ul class="footer-address__list">
           <li class="footer-address__item">
-            <h3 class="footer-address__title footer-label">Наши офисы:</h3>
-            <div class="footer-address__inner">
-              <a class="footer-address__link" href="#" target="_blank" rel="noopener noreferrer"
-                aria-label="Екатеринбург, проспект Космонавтов, дом 54, второй этаж Торгового центра 'Космос'">Екатеринбург, пр-кт<br>Космонавтов, д. 54, 2<br>этаж ТЦ Космос</a>
-              <a class="footer-address__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="город Верхняя Пышма, проспект Успенский, дом 125, офис 305">г. Верхняя Пышма,<br>проспект
-                Успенский<br>125,оф 305</a>
-            </div>
-          </li>
-          <li class="footer-address__item">
-            <h3 class="footer-address__title footer-label">Производство:</h3>
-            <div class="footer-address__inner">
-              <a class="footer-address__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="город Среднеуральск, улица Ленина, дом 1">г. Среднеуральск, ул.<br>Ленина, д. 1</a>
+            <div class="footer-address__column">
+              <div class="footer-address__block">
+                <h3 class="footer-address__title footer-label">Наши офисы:</h3>
+                <div class="footer-address__inner">
+                  <a class="footer-address__link" href="#" target="_blank" rel="noopener noreferrer">Екатеринбург, пр. Космонавтов,&#32;<br>д.&nbsp;54, 2 этаж ТЦ Космос</a>
+                  <a class="footer-address__link" href="#" target="_blank" rel="noopener noreferrer">г. Верхняя Пышма, проспект&#32;<br>Успенский 125,оф 305</a>
+                </div>
+              </div>
+              <div class="footer-address__block">
+                <h3 class="footer-address__title footer-address__title--narrow footer-label">Производство:</h3>
+                <div class="footer-address__inner">
+                  <a class="footer-address__link" href="#" target="_blank" rel="noopener noreferrer">г. Среднеуральск, ул. Ленина, д. 1</a>
+                </div>
+              </div>
             </div>
           </li>
           <li class="footer-address__item">
@@ -87,10 +111,8 @@
     </div>
   </div>
   <div class="footer-bottom container">
-    <div class="footer-bottom__links">
-      <a class="footer-bottom__item" href="#" target="_blank" rel="noopener noreferrer">Конфиденциальность</a>
-      <a class="footer-bottom__item footer-bottom__item--narrow" href="#" target="_blank" rel="noopener noreferrer">Оферта</a>
-    </div>
+    <a class="footer-bottom__item" href="#" target="_blank" rel="noopener noreferrer">Конфиденциальность</a>
+    <a class="footer-bottom__item footer-bottom__item--narrow" href="#" target="_blank" rel="noopener noreferrer">Оферта</a>
     <div class="footer-bottom__item">&copy; 2025 Свои Окна</div>
   </div>
 </footer>
