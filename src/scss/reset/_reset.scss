@@ -74,7 +74,6 @@
 }
 
 :where(html) {
-  container-type: inline-size;
   scroll-padding-block-start: variables.$header-height;
 
   @include mixins.prefers-reduced-motion {

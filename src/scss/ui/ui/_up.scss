@@ -1,0 +1,35 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.up {
+  position: fixed;
+  inset-block-end: 15px;
+  inset-inline-end: 15px;
+  z-index: 75;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 40px;
+  aspect-ratio: 1 / 1;
+  color: variables.$color-white;
+  background-color: variables.$color-hover;
+  border: 2px solid variables.$color-hover;
+  border-radius: 5px;
+  transform: rotate(-90deg);
+
+  html:not(.scrolled) & {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: color, background-color, opacity, visibility;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    color: variables.$color-hover;
+    background-color: variables.$color-white;
+  }
+}
