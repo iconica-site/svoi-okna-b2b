@@ -4,7 +4,7 @@
       <img src="@img/icons/header/1.png" alt="Лучшее предприятие отрасли 2024">
     </div>
     <div class="header__logo header-logo">
-      <a class="header-logo__inner" href="/" aria-current="page" aria-label="Главная">
+      <a class="header-logo__inner" href="/" @@if (page==="index" ) { aria-current="page" } aria-label="Главная">
         <span class="header-logo__image responsive-media">
           <img src="@img/logo.png" alt="">
         </span>
@@ -41,34 +41,34 @@
             <div class="header-spoilers__region" data-spoiler="region">
               <ul class="header-sublinks">
                 <li class="header-sublinks__item">
-                  <a class="header-sublinks__link" href="#">Пластиковые окна</a>
+                  <a class="header-sublinks__link" href="#" @@if (page==="plastic-windows" ) { aria-current="page" }>Пластиковые окна</a>
                 </li>
                 <li class="header-sublinks__item">
-                  <a class="header-sublinks__link" href="#">Алюминиевые окна</a>
+                  <a class="header-sublinks__link" href="#" @@if (page==="aluminum-windows" ) { aria-current="page" }>Алюминиевые окна</a>
                 </li>
                 <li class="header-sublinks__item">
-                  <a class="header-sublinks__link" href="#">Пластиковые двери</a>
+                  <a class="header-sublinks__link" href="#" @@if (page==="plastic-doors" ) { aria-current="page" }>Пластиковые двери</a>
                 </li>
                 <li class="header-sublinks__item">
-                  <a class="header-sublinks__link" href="#">Алюминиевые входные группы</a>
+                  <a class="header-sublinks__link" href="#" @@if (page==="aluminum-entrances" ) { aria-current="page" }>Алюминиевые входные группы</a>
                 </li>
                 <li class="header-sublinks__item">
-                  <a class="header-sublinks__link" href="#">Остекление балконов</a>
+                  <a class="header-sublinks__link" href="#" @@if (page==="glazing" ) { aria-current="page" }>Остекление балконов</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="header-nav__item">
-            <a class="header-link" href="#">Производство</a>
+            <a class="header-link" href="#" @@if (page==="production" ) { aria-current="page" }>Производство</a>
           </li>
           <li class="header-nav__item">
-            <a class="header-link" href="#">Партнеры</a>
+            <a class="header-link" href="#" @@if (page==="partners" ) { aria-current="page" }>Партнеры</a>
           </li>
           <li class="header-nav__item">
-            <a class="header-link" href="#">Дилерам и строителям</a>
+            <a class="header-link" href="#" @@if (page==="cooperation" ) { aria-current="page" }>Дилерам и строителям</a>
           </li>
           <li class="header-nav__item">
-            <a class="header-link" href="#">Контакты</a>
+            <a class="header-link" href="#" @@if (page==="contacts" ) { aria-current="page" }>Контакты</a>
           </li>
         </ul>
       </nav>
