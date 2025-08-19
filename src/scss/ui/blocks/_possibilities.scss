@@ -4,7 +4,14 @@
 
 .possibilities {
   padding-block: 50px;
-  background-color: variables.$color-section-background;
+
+  &:not(&--white) {
+    background-color: variables.$color-section-background;
+  }
+
+  // .possibilities--white
+  &--white {
+  }
 
   // .possibilities__title
   &__title {
@@ -40,6 +47,10 @@
   background-color: variables.$color-white;
   border-radius: 10px;
   overflow: hidden;
+
+  .possibilities--white & {
+    background-color: variables.$color-fafcfe;
+  }
 
   @media (min-width: #{1024 + 0.1px}) {
     gap: 36px;

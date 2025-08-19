@@ -1,5 +1,18 @@
 <section class="documents container" id="section-documents" aria-labelledby="title-documents">
-  <h2 class="visually-hidden" id="title-documents">#</h2>
+  @@if (header) {
+  <div class="documents__header">
+    <h2 class="documents__title h2" id="title-documents">Сертификаты качества:</h2>
+    <div class="documents-info">
+      <div class="documents-info__icon responsive-media">
+        <img src="@img/icons/ui/blocks/documents/1.png" alt="" loading="lazy">
+      </div>
+      <p class="documents-info__text"><b>Состоим в СРО.</b>&#32;Соответствуем всем требованиям и стандартам</p>
+    </div>
+  </div>
+  }
+  @@if (!header) {
+  <h2 class="visually-hidden" id="title-documents">Сертификаты качества:</h2>
+  }
   <div class="documents__inner">
     <div class="documents-slider swiper">
       <div class="documents-slider__wrapper swiper-wrapper">
