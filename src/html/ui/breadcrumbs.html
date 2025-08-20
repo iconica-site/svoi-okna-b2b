@@ -1,0 +1,17 @@
+<div class="@@if (block) { @@block__breadcrumbs } breadcrumbs @@if (modifier) { breadcrumbs--@@modifier }">
+  <nav class="breadcrumbs__nav breadcrumbs-nav" aria-label="Навигационная цепочка">
+    <ol class="breadcrumbs-nav__list">
+      <li class="breadcrumbs-nav__item">
+        <a class="breadcrumbs-nav__link" href="/">Главная</a>
+      </li>
+      @@if (secondPage) {
+      <li class="breadcrumbs-nav__item">
+        <a class="breadcrumbs-nav__link" href="#">@@secondPage</a>
+      </li>
+      }
+      <li class="breadcrumbs-nav__item">
+        <a class="breadcrumbs-nav__link" href="" aria-current="page">@@currentPage</a>
+      </li>
+    </ol>
+  </nav>
+</div>

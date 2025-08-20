@@ -1,0 +1,68 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.breadcrumbs {
+  font-weight: 500;
+  font-size: 14px;
+
+  // .breadcrumbs--white
+  &--white {
+    color: rgba($color: variables.$color-white, $alpha: 0.7);
+  }
+
+  // .breadcrumbs__nav
+  &__nav {
+  }
+}
+
+.breadcrumbs-nav {
+  // .breadcrumbs-nav__list
+  &__list {
+  }
+
+  // .breadcrumbs-nav__item
+  &__item {
+    display: inline;
+
+    &:not(:last-child) {
+      &::after {
+        content: " / ";
+      }
+    }
+  }
+
+  // .breadcrumbs-nav__link
+  &__link {
+    &[aria-current="page"] {
+      color: variables.$color-hover;
+
+      .breadcrumbs--white & {
+        color: variables.$color-white;
+
+        @include mixins.hover {
+          color: rgba($color: variables.$color-white, $alpha: 0.7);
+        }
+      }
+
+      @include mixins.hover {
+        color: variables.$color-4b5563;
+      }
+    }
+
+    .breadcrumbs--white & {
+      @include mixins.hover {
+        color: variables.$color-white;
+      }
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-hover;
+    }
+  }
+}
