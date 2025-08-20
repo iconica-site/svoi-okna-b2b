@@ -1,0 +1,98 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.objects {
+  padding-block: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 894 707'%3E%3Cpath fill='%233D62EB' fill-opacity='.04' d='M542.37 8.41a2 2 0 0 1 2.83 0l348.23 348.23a2 2 0 0 1 0 2.83l-346.7 346.7a2 2 0 0 1-2.83 0L195.67 357.94a2 2 0 0 1 0-2.83l346.7-346.7ZM347.3.6a2 2 0 0 1 2.82 0l60.6 60.59a2 2 0 0 1 0 2.82L127.41 347.3a2 2 0 0 0 0 2.82l284.81 284.81a2 2 0 0 1 0 2.83l-60.59 60.6a2 2 0 0 1-2.82 0L.59 350.1a2 2 0 0 1 0-2.82L347.29.59Zm106.6 487.86 89.13 89.13 222.36-222.36-89.13-89.13-222.36 222.36Zm-131.77-129.2 81.74 81.74 80.64-80.63-81.75-81.75-80.63 80.63Zm125.61-131.88 81.75 81.74 95.95-95.95-81.75-81.74-95.95 95.95Z'/%3E%3C/svg%3E");
+  background-position: top -101px right -94.02px;
+  background-repeat: no-repeat;
+  background-size: 894.02px 706.76px;
+
+  // .objects__title
+  &__title {
+    margin-block-end: 30px;
+  }
+}
+
+.objects-list {
+  --gap: 10px;
+
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+
+  // .objects-list__item
+  &__item {
+  }
+}
+
+.object-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  gap: 5px;
+  flex: 1 1 calc((100cqi - var(--gap) * (var(--columns) - 1)) / var(--columns));
+  padding: 20px;
+  color: variables.$color-white;
+  background-color: variables.$color-hover;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &:has(.object-card__image) {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      font-size: 0;
+      background-image: linear-gradient(to bottom, rgba(variables.$color-black, 0), rgba(variables.$color-black, 0.5));
+    }
+  }
+
+  // .object-card--big
+  &--big {
+    --columns: 4;
+
+    aspect-ratio: 291.75 / 365;
+  }
+
+  // .object-card--small
+  &--small {
+    --columns: 3;
+
+    aspect-ratio: 393.33 / 167;
+  }
+
+  // .object-card__caption
+  &__caption {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  // .object-card__text
+  &__text {
+  }
+
+  // .object-card__image
+  &__image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    font-size: 0;
+  }
+
+  // .object-card__icon
+  &__icon {
+    position: absolute;
+    inset-block-start: -20px;
+    inset-inline-end: -20px;
+    z-index: -1;
+    font-size: 0;
+    color: rgba($color: variables.$color-white, $alpha: 0.2);
+  }
+}
