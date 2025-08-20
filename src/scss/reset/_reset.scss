@@ -130,7 +130,7 @@
   resize: vertical;
 }
 
-:where(:focus-visible) {
+:where(:focus-visible:not(input, select, textarea)) {
   outline: 2px solid var(--outline-color, currentColor);
   outline-offset: 2px;
 
