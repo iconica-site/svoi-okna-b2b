@@ -1,0 +1,71 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.offer {
+  padding-block: 50px;
+  background-color: variables.$color-f7fcff;
+
+  > *:last-child {
+    margin-block-end: 0;
+  }
+
+  // .offer__title
+  &__title {
+    margin-block-end: 30px;
+  }
+
+  // .offer__gallery
+  &__gallery {
+    margin-block-end: 30px;
+  }
+}
+
+.offer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  // .offer-gallery__item
+  &__item {
+  }
+
+  // .offer-gallery__image
+  &__image {
+    display: block;
+    aspect-ratio: 390 / 220;
+    font-size: 0;
+    border-radius: 11px;
+  }
+}
+
+.offer-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 19px;
+  row-gap: 20px;
+
+  // .offer-list__item
+  &__item {
+    break-inside: avoid;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    color: variables.$color-404040;
+
+    &::before {
+      content: "";
+      flex: 0 0 auto;
+      inline-size: 7px;
+      aspect-ratio: 1 / 1;
+      font-size: 0;
+      background-color: variables.$color-f81255;
+      border-radius: 50%;
+    }
+
+    b {
+      font-weight: 700;
+    }
+  }
+}
