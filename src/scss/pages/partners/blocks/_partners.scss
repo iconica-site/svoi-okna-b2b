@@ -1,0 +1,81 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.partners {
+  padding-block: 50px;
+
+  // .partners__breadcrumbs
+  &__breadcrumbs {
+    margin-block-end: 30px;
+  }
+
+  // .partners__inner
+  &__inner {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  // .partners__header
+  &__header {
+    > *:last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  // .partners__title
+  &__title {
+    margin-block-end: 20px;
+  }
+
+  // .partners__text
+  &__text {
+    max-inline-size: 297px;
+    font-size: 20px;
+  }
+}
+
+.partner-services {
+  display: flex;
+  align-items: start;
+  gap: 30px;
+
+  // .partner-services__item
+  &__item {
+  }
+}
+
+.partner-card {
+  color: variables.$color-404040;
+
+  > *:last-child {
+    margin-block-end: 0;
+  }
+
+  // .partner-card__icon
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inline-size: 60px;
+    aspect-ratio: 1 / 1;
+    margin-block-end: 20px;
+    font-size: 0;
+    color: variables.$color-hover;
+    background-color: variables.$color-e8ecff;
+    border-radius: 5px;
+  }
+
+  // .partner-card__caption
+  &__caption {
+    margin-block-end: 10px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  // .partner-card__text
+  &__text {
+  }
+}

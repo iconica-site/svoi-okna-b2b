@@ -1,0 +1,49 @@
+<section class="partners container" id="section-partners" aria-labelledby="title-partners">
+  @@include("../../../ui/breadcrumbs.html", {
+  block: "partners",
+  modifier: false,
+  secondPage: false,
+  currentPage: "Наши партнеры"
+  })
+  <div class="partners__inner">
+    <div class="partners__header">
+      <h1 class="partners__title h2" id="title-partners">Наши партнеры</h1>
+      <p class="partners__text">Вы можете обратиться к нашим партерам для помощи:</p>
+    </div>
+    <ul class="partner-services">
+      <li class="partner-services__item">
+        <article class="partner-card">
+          <div class="partner-card__icon" aria-hidden="true">
+            <svg width="30" height="30">
+              <use xlink:href="#icon-size"></use>
+            </svg>
+          </div>
+          <h2 class="partner-card__caption">Замер</h2>
+          <p class="partner-card__text">Точный расчёт размеров&#32;<br>для идеальной&#32;<br>совместимости.</p>
+        </article>
+      </li>
+      <li class="partner-services__item">
+        <article class="partner-card">
+          <div class="partner-card__icon" aria-hidden="true">
+            <svg width="30" height="30">
+              <use xlink:href="#icon-person"></use>
+            </svg>
+          </div>
+          <h2 class="partner-card__caption">Монтаж</h2>
+          <p class="partner-card__text">Профессиональная&#32;<br>установка окон&#32;<br>с&nbsp;гарантией надёжности.</p>
+        </article>
+      </li>
+      <li class="partner-services__item">
+        <article class="partner-card">
+          <div class="partner-card__icon" aria-hidden="true">
+            <svg width="30" height="30">
+              <use xlink:href="#icon-message"></use>
+            </svg>
+          </div>
+          <h2 class="partner-card__caption">Консультация</h2>
+          <p class="partner-card__text">Подбор светопрозрачных&#32;<br>конструкций&#32;<br>и&nbsp;их&nbsp;комплектующих</p>
+        </article>
+      </li>
+    </ul>
+  </div>
+</section>
