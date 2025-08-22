@@ -1,9 +1,18 @@
-@use "../../../functions/functions";
-@use "../../../mixins/mixins";
-@use "../../../variables/variables";
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
 
 .contacts {
-  padding-block: 50px 10px;
+  padding-block-start: 30px;
+
+  &:has(.contacts__title) {
+    padding-block: 50px 10px;
+  }
+
+  // .contacts--gray
+  &--gray {
+    background-color: variables.$color-f7fcff;
+  }
 
   > *:last-child {
     margin-block-end: 0;
