@@ -28,6 +28,11 @@
   // .partners__title
   &__title {
     margin-block-end: 20px;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: variables.$color-404040;
   }
 
   // .partners__text
