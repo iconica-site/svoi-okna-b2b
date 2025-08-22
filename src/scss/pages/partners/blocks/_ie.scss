@@ -1,0 +1,130 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.ie {
+  padding-block: 31px 51px;
+  background-color: variables.$color-f7fcff;
+}
+
+.ie-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+
+  // .ie-list__item
+  &__item {
+  }
+}
+
+.ie-card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  block-size: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: variables.$color-white;
+
+  // .ie-card__title
+  &__title {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.2;
+    color: variables.$color-404040;
+  }
+
+  // .ie-card__address
+  &__address {
+    flex: 1 1 auto;
+  }
+}
+
+.ie-address {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  // .ie-place__map
+  &__map {
+    flex: 0 0 auto;
+    aspect-ratio: 348 / 169;
+    margin-block-start: auto;
+    font-size: 0;
+    border-radius: 10px;
+  }
+}
+
+.ie-contacts {
+  // .ie-contacts__item
+  &__item {
+    &:not(:last-child) {
+      margin-block-end: 15px;
+    }
+  }
+}
+
+.ie-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  color: variables.$color-black;
+
+  @include mixins.prefers-reduced-motion {
+    transition-property: color;
+    transition-duration: 0.3s;
+  }
+
+  @include mixins.hover {
+    color: variables.$color-f81255;
+  }
+
+  // .ie-link__icon
+  &__icon {
+    flex: 0 0 auto;
+    font-size: 0;
+    color: variables.$color-f81255;
+  }
+
+  // .ie-link__text
+  &__text {
+  }
+}
+
+.ie-place {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+
+  // .ie-place__link
+  &__link {
+    font-size: 20px;
+    color: variables.$color-black;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-hover;
+    }
+  }
+
+  // .ie-place__time
+  &__time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-block-size: 26px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    font-size: 13px;
+    text-align: center;
+    color: variables.$color-606060;
+    background-color: variables.$color-f3f7fb;
+    border-radius: 30px;
+  }
+}
