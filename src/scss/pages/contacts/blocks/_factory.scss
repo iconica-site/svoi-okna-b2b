@@ -1,0 +1,25 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.factory {
+  padding-block: 10px 25px;
+}
+
+.factory-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  // .factory-gallery__item
+  &__item {
+  }
+
+  // .factory-gallery__image
+  &__image {
+    display: block;
+    aspect-ratio: 390 / 220;
+    font-size: 0;
+    border-radius: 11px;
+  }
+}
