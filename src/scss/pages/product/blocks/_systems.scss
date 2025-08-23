@@ -1,0 +1,68 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.systems {
+  padding-block: 50px;
+
+  // .systems__title
+  &__title {
+    margin-block-end: 30px;
+  }
+}
+
+.systems-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  // .systems-list__item
+  &__item {
+  }
+}
+
+.systems-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 30px;
+  block-size: 100%;
+  padding: 30px;
+  border: 1px solid variables.$color-c5d0f9;
+  border-radius: 10px;
+
+  // .systems-card__icon
+  &__icon {
+    flex: 0 0 auto;
+    inline-size: 150px;
+    aspect-ratio: 150 / 44;
+    font-size: 0;
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.systems-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 5px;
+  column-gap: 4px;
+
+  // .systems-badges__item
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-block-size: 29px;
+    padding-block: 5px;
+    padding-inline: 14px;
+    text-align: center;
+    color: variables.$color-404040;
+    background-color: variables.$color-f4f7fe;
+    border-radius: 30px;
+  }
+}
