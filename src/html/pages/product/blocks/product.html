@@ -1,0 +1,75 @@
+<section class="product container" id="section-product" aria-labelledby="title-product">
+  <div class="product__inner">
+    <div class="product__content">
+      <!-- #region Breadcrumbs -->
+      @@if (product === "plastic-windows") {
+      @@include("../../../ui/breadcrumbs.html", {
+      block: "product",
+      modifier: false,
+      secondPage: "Каталог",
+      currentPage: "Пластиковые окна"
+      })
+      }
+      @@if (product === "aluminum-windows") {
+      @@include("../../../ui/breadcrumbs.html", {
+      block: "product",
+      modifier: false,
+      secondPage: "Каталог",
+      currentPage: "Алюминиевые окна"
+      })
+      }
+      @@if (product === "plastic-doors") {
+      @@include("../../../ui/breadcrumbs.html", {
+      block: "product",
+      modifier: false,
+      secondPage: "Каталог",
+      currentPage: "Пластиковые двери"
+      })
+      }
+      @@if (product === "glazing") {
+      @@include("../../../ui/breadcrumbs.html", {
+      block: "product",
+      modifier: false,
+      secondPage: "Каталог",
+      currentPage: "Остекление балконов"
+      })
+      }
+      @@if (product === "aluminum-entrances") {
+      @@include("../../../ui/breadcrumbs.html", {
+      block: "product",
+      modifier: false,
+      secondPage: "Каталог",
+      currentPage: "Алюминиевые входные группы"
+      })
+      }
+      <!-- #endregion -->
+      <h1 class="product__title @@if (smallTitle) { product__title--small }" id="title-product">@@title</h1>
+      <p class="product__text">@@text</p>
+      <a class="product__button button" href="#" target="_blank" rel="noopener noreferrer">
+        <span class="button__icon" aria-hidden="true">
+          <svg width="14" height="14">
+            <use xlink:href="#icon-new-tab"></use>
+          </svg>
+        </span>
+        <span class="button__text">Получить КП&nbsp;и&nbsp;консультацию</span>
+      </a>
+    </div>
+    <div class="product__image responsive-media">
+      <img src="@img/images/pages/product/product/@@image.jpg" alt="#">
+    </div>
+  </div>
+  <ul class="product-advantages">
+    <li class="product-advantages__item">
+      <span class="product-advantages__caption">40&nbsp;лет</span>
+      <span class="product-advantages__text">средний срок службы наших окон</span>
+    </li>
+    <li class="product-advantages__item">
+      <span class="product-advantages__caption">7&nbsp;этапов</span>
+      <span class="product-advantages__text">контроля для&nbsp;исключения брака</span>
+    </li>
+    <li class="product-advantages__item">
+      <span class="product-advantages__caption">12&nbsp;лет</span>
+      <span class="product-advantages__text">производство остаётся нашей сферой</span>
+    </li>
+  </ul>
+</section>
