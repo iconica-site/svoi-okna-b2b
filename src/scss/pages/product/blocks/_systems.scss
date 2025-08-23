@@ -5,6 +5,11 @@
 .systems {
   padding-block: 50px;
 
+  // .systems--gray
+  &--gray {
+    background-color: variables.$color-f7fcff;
+  }
+
   // .systems__title
   &__title {
     margin-block-end: 30px;

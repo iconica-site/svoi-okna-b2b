@@ -4,7 +4,11 @@
 
 .fittings {
   padding-block: 50px 25px;
-  background-color: variables.$color-f7fcff;
+
+  // .fittings--gray
+  &--gray {
+    background-color: variables.$color-f7fcff;
+  }
 
   // .fittings__title
   &__title {
