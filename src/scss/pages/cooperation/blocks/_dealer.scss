@@ -40,6 +40,14 @@
   &__image {
     font-size: 0;
     border-radius: 10px;
+
+    // .dealer__image--top
+    &--top {
+    }
+
+    // .dealer__image--bottom
+    &--bottom {
+    }
   }
 }
 

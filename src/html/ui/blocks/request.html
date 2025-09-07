@@ -13,7 +13,14 @@
       </form>
     </div>
     <div class="request__background responsive-media">
-      <img src="@img/images/ui/blocks/request/1.png" alt="" loading="lazy">
+      <picture>
+        <source srcset="@img/images/ui/blocks/request/1.webp" type="image/webp" media="(min-width: 1024.1px)">
+        <source srcset="@img/images/ui/blocks/request/1.png" type="image/png" media="(min-width: 1024.1px)">
+        <source srcset="@img/images/ui/blocks/request/2.webp" type="image/webp" media="(min-width: 768.1px)">
+        <source srcset="@img/images/ui/blocks/request/2.png" type="image/png" media="(min-width: 768.1px)">
+        <source srcset="@img/images/ui/blocks/request/3.webp" type="image/webp">
+        <img src="@img/images/ui/blocks/request/3.png" alt="" loading="lazy">
+      </picture>
     </div>
   </div>
 </section>
